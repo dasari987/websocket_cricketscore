@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <scrip src="/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>Admin board</h1>
+    <button onclick="updatescoreboard(1)">one</button>
+    <button onclick="updatescoreboard(2)">two</button>
+    <button onclick="updatescoreboard(3)">three</button>
+    <button onclick="updatescoreboard(4)">four</button>
+    <button onclick="updatescoreboard(6)">six</button>
+    <button onclick="updatescoreboard('wicket')">wicket</button>
+    <script>
+        function updatescoreboard(score){
+           console.log(score)
+           fetch("http://localhost:4000/ball/"+score)
+           .then((res)=>{res.json()})
+           .then((data)=>{console.log(data)})
+        }
+    </script>
+  </body>
+</html>
